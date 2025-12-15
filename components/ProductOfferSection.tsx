@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, Smartphone, Users, Zap, Lock, ShieldCheck, Gift, X, CheckCircle2 } from 'lucide-react';
+import { Check, Smartphone, Users, Zap, Lock, ShieldCheck, Gift, XCircle, AlertCircle, Banknote, TrendingUp, Shield, CheckCircle2, Heart, Star, Award } from 'lucide-react';
 import { Button } from './ui/Button';
 
 const ProductOfferSection: React.FC = () => {
@@ -47,23 +47,24 @@ const ProductOfferSection: React.FC = () => {
     }
   ];
 
-  const comparisonData = [
-    {
-      with: "Tem um método simples e testado",
-      without: "Fica perdido sem saber por onde começar"
-    },
-    {
-      with: "Aprende a vender com leveza",
-      without: "Continua achando que vender é empurrar"
-    },
-    {
-      with: "Faz a primeira venda em 7 dias",
-      without: "Passa meses estudando sem cliente"
-    },
-    {
-      with: "Ganha confiança e clareza",
-      without: "Sente que talvez \"isso não seja pra você\""
-    }
+  const painPoints = [
+    "Vergonha de cobrar pelo meu atendimento.",
+    "Estuda muito mas continua sem cliente.",
+    "Me sinto um impostor por ainda não ter atendido ninguém.",
+    "Não consegue explicar o que faz sem enrolar.",
+    "Não sabe onde encontrar pessoas que queiram comprar.",
+    "Sinto vergonha de vender.",
+    "Não se sente pronto para vender."
+  ];
+
+  const futurePoints = [
+    { icon: <Banknote className="w-5 h-5 text-brand-accent" />, text: "Receber dinheiro pelo seu serviço pela primeira vez." },
+    { icon: <TrendingUp className="w-5 h-5 text-brand-accent" />, text: "Sentir que é possível viver da sua profissão." },
+    { icon: <Shield className="w-5 h-5 text-brand-accent" />, text: "Ter mais segurança para não voltar para um emprego que não gosta." },
+    { icon: <CheckCircle2 className="w-5 h-5 text-brand-accent" />, text: "Fazer a primeira venda e ver que \"isso funciona mesmo\"." },
+    { icon: <Heart className="w-5 h-5 text-brand-accent" />, text: "Ficar animado para contar à família que conseguiu um cliente." },
+    { icon: <Star className="w-5 h-5 text-brand-accent" />, text: "Receber um elogio sincero de um cliente grato." },
+    { icon: <Award className="w-5 h-5 text-brand-accent" />, text: "Sentir-se respeitado nas conversas sobre seu serviço." },
   ];
 
   return (
@@ -209,47 +210,46 @@ const ProductOfferSection: React.FC = () => {
            </div>
         </div>
 
-        {/* 5. COMPARISON SECTION (MOVED) */}
-        <div className="mt-24 max-w-4xl mx-auto">
-            <div className="bg-[#111] rounded-3xl border border-white/10 overflow-hidden flex flex-col md:flex-row shadow-2xl">
-              
-              {/* WITHOUT Column */}
-              <div className="flex-1 p-8 md:p-10 bg-gradient-to-b from-[#111] to-red-950/10 border-b md:border-b-0 md:border-r border-white/5">
-                  <h4 className="text-xl font-bold text-zinc-400 mb-8 text-center uppercase tracking-wider flex items-center justify-center gap-2">
-                    <X className="w-6 h-6 text-red-600" />
-                    Sem o Manual
-                  </h4>
-                  <ul className="space-y-8">
-                    {comparisonData.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-4">
-                          <div className="w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                              <X className="w-3 h-3 text-red-500" />
-                          </div>
-                          <span className="text-zinc-500 font-medium">{item.without}</span>
-                        </li>
+        {/* 5. NEW TRANSFORMATION SECTION (REPLACED COMPARISON) */}
+        <div className="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch max-w-6xl mx-auto">
+            
+            {/* DORES (Current State) */}
+            <div className="relative p-8 md:p-10 rounded-3xl bg-[#0a0a0a] border border-white/5 flex flex-col justify-center">
+                <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-red-900/50 to-transparent"></div>
+                
+                <h3 className="text-xl md:text-2xl font-bold text-zinc-300 mb-8 flex items-center gap-3">
+                    <AlertCircle className="w-6 h-6 text-red-600" />
+                    O Que Você Sente Hoje
+                </h3>
+                
+                <ul className="space-y-5">
+                    {painPoints.map((point, i) => (
+                      <li key={i} className="flex items-start gap-4">
+                        <XCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
+                        <span className="text-zinc-400 text-base md:text-lg">{point}</span>
+                      </li>
                     ))}
-                  </ul>
-              </div>
+                </ul>
+            </div>
 
-              {/* WITH Column */}
-              <div className="flex-1 p-8 md:p-10 bg-gradient-to-b from-[#151515] to-brand-accent/5 relative">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-brand-accent/10 rounded-full blur-3xl pointer-events-none -translate-y-1/2 translate-x-1/2"></div>
-                  <h4 className="text-xl font-bold text-brand-accent mb-8 text-center uppercase tracking-wider flex items-center justify-center gap-2">
-                    <CheckCircle2 className="w-6 h-6 text-brand-accent" />
-                    Com o Manual
-                  </h4>
-                  <ul className="space-y-8">
-                    {comparisonData.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-4">
-                          <div className="w-6 h-6 rounded-full bg-brand-accent flex items-center justify-center flex-shrink-0 mt-0.5 shadow-[0_0_10px_rgba(212,175,55,0.4)]">
-                              <Check className="w-3.5 h-3.5 text-black stroke-[3]" />
-                          </div>
-                          <span className="text-white font-semibold">{item.with}</span>
-                        </li>
+            {/* DESEJOS (Future State) */}
+            <div className="relative p-8 md:p-10 rounded-3xl bg-[#0d0d0d] border border-brand-accent/50 shadow-[0_0_40px_-10px_rgba(212,175,55,0.15)] flex flex-col justify-center transform lg:scale-105 z-10">
+                 
+                <h3 className="text-xl md:text-2xl font-bold text-brand-accent mb-8 flex items-center gap-3">
+                    <Star className="w-6 h-6 fill-brand-accent" />
+                    O Seu Futuro Com O Manual
+                </h3>
+                
+                <ul className="space-y-5">
+                    {futurePoints.map((point, i) => (
+                      <li key={i} className="flex items-start gap-4">
+                        <div className="mt-1 flex-shrink-0">
+                          {point.icon}
+                        </div>
+                        <span className="text-white text-base md:text-lg font-medium">{point.text}</span>
+                      </li>
                     ))}
-                  </ul>
-              </div>
-
+                </ul>
             </div>
         </div>
 
