@@ -4,8 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Manual da Primeira Venda</title>
+    
+    <!-- 1. Preconnect to Font Origins (Performance) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- 2. Critical CSS Inline (Above the Fold & Reset) -->
+    <style>
+      /* Reset & Base Styles */
+      *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #0d0d0d; /* Brand Dark - Immediate Paint */
+        color: #ffffff;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+      }
+
+      /* Critical Hero Layout Helpers (Prevents Layout Shift before JS runs) */
+      #root {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      /* Typography Criticals */
+      h1, h2, h3, h4, h5, h6 {
+        font-weight: 900;
+        line-height: 1.1;
+      }
+
+      /* Common Utilities placeholders */
+      .bg-brand-dark { background-color: #0d0d0d; }
+      .text-white { color: #ffffff; }
+    </style>
+
+    <!-- 3. Async Font Loading -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- 4. Tailwind Scripts (Handles the rest of the CSS) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
         theme: {
@@ -26,23 +79,18 @@
         }
       }
     </script>
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: #0d0d0d;
-        color: white;
+
+    <!-- Import Map -->
+    <script type="importmap">
+    {
+      "imports": {
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
       }
-    </style>
-  <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.561.0"
-  }
-}
-</script>
+    }
+    </script>
 </head>
   <body>
     <div id="root"></div>
