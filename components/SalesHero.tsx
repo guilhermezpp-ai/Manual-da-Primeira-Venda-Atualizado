@@ -37,7 +37,7 @@ const SalesHero: React.FC = () => {
         
         {/* 3. SUBHEADLINE (Updated Colors) */}
         <p className="text-xl md:text-2xl text-zinc-300 font-light leading-relaxed max-w-4xl mb-12">
-          Vença a trava de oferecer o próprio serviço.
+          Aprenda um caminho claro para sair da teoria, entrar em movimento e fechar seu primeiro cliente em até 7 dias.
         </p>
 
         {/* 5. GANCHO (Bullet Points Box - Wider & Darker) */}
