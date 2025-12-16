@@ -6,88 +6,54 @@
     <title>Manual da Primeira Venda</title>
     
     <!-- 1. Performance Optimizations -->
-    <!-- Preconnect (Estabelece conexão antecipada com origens críticas) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- DNS Prefetch (Resolve DNS de domínios secundários enquanto carrega o HTML) -->
     <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
     <link rel="dns-prefetch" href="https://esm.sh">
     <link rel="dns-prefetch" href="https://img.youtube.com">
     <link rel="dns-prefetch" href="https://i.postimg.cc">
 
-    <!-- Preload Critical Assets (Inicia o download de recursos críticos imediatamente) -->
-    <!-- Fonte Principal (CSS) - Garante que a definição da fonte carregue rápido -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
-    <!-- Imagem Hero LCP (Thumbnail do Vídeo) -->
     <link rel="preload" href="https://img.youtube.com/vi/HdDJFRbNbX4/maxresdefault.jpg" as="image">
 
-    <!-- 2. Critical CSS Inline (Above the Fold & Reset) -->
+    <!-- 2. Critical CSS Inline -->
     <style>
-      /* Reset & Base Styles */
-      *, *::before, *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
+      *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+      html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+      body{font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;background-color:#0d0d0d;color:#ffffff;line-height:1.5;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden}
+      #root{display:flex;flex-direction:column;min-height:100vh}
+      h1,h2,h3,h4,h5,h6{font-weight:900;line-height:1.1}
       
-      html {
-        scroll-behavior: smooth;
-        -webkit-text-size-adjust: 100%;
-      }
-
-      body {
-        /* Optimized Font Stack: Inter -> System UI -> Fallbacks */
-        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        background-color: #0d0d0d; /* Brand Dark - Immediate Paint */
-        color: #ffffff;
-        line-height: 1.5;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        overflow-x: hidden;
-      }
-
-      /* Critical Hero Layout Helpers (Prevents Layout Shift before JS runs) */
-      #root {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
-
-      /* Typography Criticals */
-      h1, h2, h3, h4, h5, h6 {
-        font-weight: 900;
-        line-height: 1.1;
-      }
-
-      /* Common Utilities placeholders */
-      .bg-brand-dark { background-color: #0d0d0d; }
-      .text-white { color: #ffffff; }
+      /* Critical Helpers for Brand Colors (Garante cor imediata) */
+      .bg-brand-dark{background-color:#0d0d0d}
+      .text-white{color:#ffffff}
+      /* Adicionando cores manuais para garantir que apareçam antes do script processar */
+      .text-brand-accent { color: #d4af37; }
+      .bg-brand-accent { background-color: #d4af37; }
+      .border-brand-accent { border-color: #d4af37; }
     </style>
 
-    <!-- 3. Async Font Loading with display=swap -->
+    <!-- 3. Async Font Loading -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    </noscript>
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
 
-    <!-- 4. Tailwind Scripts (Handles the rest of the CSS) -->
+    <!-- 4. Tailwind Scripts (Restaurado modo síncrono para garantir config) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              /* Optimized Tailwind Font Stack with System Fallbacks */
-              sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+              sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
             },
             colors: {
               brand: {
-                dark: '#0d0d0d', // Pure Black/Dark Grey
-                surface: '#1a1a1a', // Slightly lighter for cards
-                accent: '#d4af37', // Gold/Metallic Gold
-                accentHover: '#b4941f', // Darker Gold
-                text: '#ffffff', // White
+                dark: '#0d0d0d', 
+                surface: '#1a1a1a', 
+                accent: '#d4af37', 
+                accentHover: '#b4941f', 
+                text: '#ffffff', 
               }
             }
           }
@@ -109,7 +75,6 @@
 </head>
   <body>
     <div id="root"></div>
-    <!-- ESSENTIAL: Entry point for the React Application -->
     <script type="module" src="/index.tsx"></script>
   </body>
 </html>
