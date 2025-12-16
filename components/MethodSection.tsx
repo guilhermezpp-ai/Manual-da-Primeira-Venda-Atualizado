@@ -34,7 +34,7 @@ const MethodSection: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full py-20 md:py-32 bg-[#0a0a0a] text-white overflow-hidden">
+    <section className="relative w-full py-24 md:py-32 bg-[#0a0a0a] text-white overflow-hidden">
       
       {/* Decorative Background Elements */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-accent/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
@@ -49,7 +49,7 @@ const MethodSection: React.FC = () => {
             <span className="text-sm font-bold tracking-[0.3em] uppercase">O Método</span>
           </div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-8 leading-tight">
+          <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight">
             A Rota da <span className="text-brand-accent">Primeira Venda</span>
           </h2>
           
@@ -64,12 +64,12 @@ const MethodSection: React.FC = () => {
             <div 
               key={index}
               className={`
-                group relative p-8 rounded-2xl border border-white/5 bg-[#151515] hover:bg-[#1a1a1a] transition-all duration-500 hover:-translate-y-2 hover:border-brand-accent/30 hover:shadow-[0_10px_40px_-10px_rgba(212,175,55,0.1)]
+                group relative p-8 md:p-10 rounded-2xl border border-white/5 bg-[#151515] hover:bg-[#1a1a1a] transition-all duration-500 hover:-translate-y-2 hover:border-brand-accent/30 hover:shadow-[0_10px_40px_-10px_rgba(212,175,55,0.1)]
                 ${index === steps.length - 1 ? 'md:col-span-2 lg:col-span-3 lg:w-2/3 lg:mx-auto' : ''}
               `}
             >
               {/* Number Watermark */}
-              <div className="absolute top-4 right-6 text-6xl font-black text-white/[0.03] group-hover:text-brand-accent/10 transition-colors duration-500 select-none">
+              <div className="absolute top-4 right-6 text-6xl md:text-8xl font-black text-white/[0.03] group-hover:text-brand-accent/10 transition-colors duration-500 select-none">
                 0{index + 1}
               </div>
 
@@ -82,7 +82,7 @@ const MethodSection: React.FC = () => {
               <h3 className="text-xl md:text-2xl font-bold text-white mb-3 group-hover:text-brand-accent transition-colors duration-300">
                 {step.title}
               </h3>
-              <p className="text-zinc-400 leading-relaxed text-sm md:text-base">
+              <p className="text-zinc-400 leading-relaxed text-base">
                 {step.description}
               </p>
 
@@ -96,7 +96,7 @@ const MethodSection: React.FC = () => {
 
         {/* Connection to Next Section */}
         <div className="flex justify-center mt-20">
-           <ArrowDown className="w-8 h-8 text-white/20 animate-bounce" />
+           <ArrowDown className="w-10 h-10 text-white/20 animate-bounce" />
         </div>
 
       </div>

@@ -14,7 +14,7 @@ const SalesHero: React.FC = () => {
   ];
 
   return (
-    <section className="relative w-full min-h-screen bg-brand-dark text-white overflow-hidden py-16 md:py-24">
+    <section className="relative w-full min-h-screen bg-brand-dark text-white overflow-hidden py-20 md:py-32 flex flex-col justify-center">
       
       {/* Background Ambience (Subtle Gold Glow) */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
@@ -24,19 +24,19 @@ const SalesHero: React.FC = () => {
       <div className="container mx-auto px-4 md:px-8 relative z-10 flex flex-col items-center text-center max-w-[1100px]">
         
         {/* 1. LOGO */}
-        <div className="mb-10 md:mb-14 animate-fade-in-down">
-          <span className="inline-block px-6 py-2 border-b border-white/20 text-xs md:text-sm font-bold tracking-[0.3em] text-white uppercase">
+        <div className="mb-12 animate-fade-in-down">
+          <span className="inline-block px-6 py-2 border-b border-white/20 text-sm font-bold tracking-[0.3em] text-white uppercase">
             Manual da Primeira Venda
           </span>
         </div>
 
         {/* 2. HEADLINE (Updated Colors) */}
-        <h1 className="text-5xl md:text-6xl lg:text-8xl font-black leading-[1.05] text-white tracking-tight mb-8 max-w-5xl">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-black leading-[1.05] text-white tracking-tight mb-8 max-w-5xl">
           Conquiste seu primeiro cliente em <span className="text-brand-accent">7 dias.</span>
         </h1>
         
         {/* 3. SUBHEADLINE (Updated Colors) */}
-        <p className="text-xl md:text-3xl text-zinc-300 font-light leading-relaxed max-w-4xl mb-16">
+        <p className="text-xl md:text-2xl text-zinc-300 font-light leading-relaxed max-w-4xl mb-12">
           Vença a trava de oferecer o próprio serviço.
         </p>
 
@@ -45,7 +45,7 @@ const SalesHero: React.FC = () => {
             {/* Subtle inner glow */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-accent/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2"></div>
 
-            <h3 className="relative z-10 flex items-center gap-3 font-bold text-brand-accent mb-8 text-lg md:text-xl uppercase tracking-wider border-b border-white/5 pb-6">
+            <h3 className="relative z-10 flex items-center gap-3 font-bold text-brand-accent mb-8 text-xl uppercase tracking-wider border-b border-white/5 pb-4">
                <PlayCircle className="w-6 h-6" />
                Assista agora e descubra:
             </h3>
@@ -56,14 +56,14 @@ const SalesHero: React.FC = () => {
                   <div className="mt-1 flex-shrink-0 text-brand-accent bg-brand-accent/10 p-1 rounded-full">
                     <Check className="w-5 h-5" strokeWidth={3} />
                   </div>
-                  <span className="text-zinc-100 text-lg md:text-xl leading-snug">{benefit}</span>
+                  <span className="text-zinc-100 text-lg leading-snug">{benefit}</span>
                 </li>
               ))}
             </ul>
         </div>
 
         {/* 6. VÍDEO (Large Cinema Style) */}
-        <div className="w-full max-w-5xl relative group mb-16">
+        <div className="w-full max-w-4xl relative group mb-16">
           {/* Subtle Gold Glow Behind Video */}
           <div className="absolute -inset-1 bg-gradient-to-b from-brand-accent/20 to-transparent rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition duration-700"></div>
           
@@ -73,15 +73,15 @@ const SalesHero: React.FC = () => {
         </div>
 
         {/* 7. CTA PRINCIPAL */}
-        <div className="flex flex-col items-center w-full gap-5">
+        <div className="flex flex-col items-center w-full gap-6">
           <Button 
             fullWidth 
-            className="max-w-2xl py-6 md:py-8 text-xl md:text-2xl shadow-[0_4px_30px_rgba(212,175,55,0.25)] hover:shadow-[0_8px_40px_rgba(212,175,55,0.4)]"
+            className="max-w-xl py-6 md:py-8 text-2xl shadow-[0_4px_30px_rgba(212,175,55,0.25)] hover:shadow-[0_8px_40px_rgba(212,175,55,0.4)]"
             href="#oferta"
           >
             Quero fazer minha primeira venda agora
           </Button>
-          <div className="flex flex-wrap justify-center items-center gap-3 md:gap-6 text-xs md:text-sm font-bold text-zinc-500 uppercase tracking-widest mt-2">
+          <div className="flex flex-wrap justify-center items-center gap-6 text-xs font-bold text-zinc-500 uppercase tracking-widest mt-2">
             <span className="flex items-center gap-2"><span className="text-brand-accent">🔒</span> Compra Segura</span>
             <span className="hidden md:block w-1 h-1 bg-zinc-700 rounded-full"></span>
             <span className="flex items-center gap-2"><span className="text-brand-accent">⚡</span> Acesso Imediato</span>

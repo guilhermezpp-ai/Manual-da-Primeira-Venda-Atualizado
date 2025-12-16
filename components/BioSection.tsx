@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, TrendingUp, GraduationCap, Quote } from 'lucide-react';
+import { Award, TrendingUp, GraduationCap } from 'lucide-react';
 
 const BioSection: React.FC = () => {
   return (
@@ -14,9 +14,8 @@ const BioSection: React.FC = () => {
           {/* 1. IMAGE COLUMN */}
           <div className="w-full lg:w-5/12 relative group">
             <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-[#111]">
-               {/* Real Photo */}
                <img 
-                 src="https://i.postimg.cc/TY9VCrTv/IMG-4119.jpg" 
+                 src="https://i.postimg.cc/jjV7VFz1/guilherme-pagina-de-vendas.jpg" 
                  alt="Guilherme Zampoli" 
                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"
                />
@@ -24,7 +23,7 @@ const BioSection: React.FC = () => {
                {/* Overlay Gradient */}
                <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-transparent to-transparent opacity-90"></div>
                
-               {/* Name on Image (Mobile/Tablet style, or aesthetic choice) */}
+               {/* Name on Image */}
                <div className="absolute bottom-6 left-6 right-6">
                  <p className="text-brand-accent font-bold tracking-widest text-sm uppercase mb-1">Seu Mentor</p>
                  <h2 className="text-3xl font-black text-white">Guilherme Zampoli</h2>
