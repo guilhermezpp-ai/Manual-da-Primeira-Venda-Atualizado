@@ -33,10 +33,17 @@
       .text-brand-accent { color: #d4af37; }
       .bg-brand-accent { background-color: #d4af37; }
       .border-brand-accent { border-color: #d4af37; }
+
+      /* Global Animations to avoid JS injection */
+      @keyframes shine {
+        100% {
+          left: 125%;
+        }
+      }
     </style>
 
-    <!-- 3. Async Font Loading -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- 3. Async Font Loading (Non-blocking strategy) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
 
     <!-- 4. Tailwind Scripts (Restaurado modo síncrono para garantir config) -->

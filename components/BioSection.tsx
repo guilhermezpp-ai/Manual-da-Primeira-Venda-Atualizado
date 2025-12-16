@@ -18,6 +18,10 @@ const BioSection: React.FC = () => {
                  src="https://i.postimg.cc/jjV7VFz1/guilherme-pagina-de-vendas.jpg" 
                  alt="Guilherme Zampoli" 
                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 transform group-hover:scale-105"
+                 loading="lazy"
+                 decoding="async"
+                 width="600"
+                 height="800"
                />
                
                {/* Overlay Gradient */}

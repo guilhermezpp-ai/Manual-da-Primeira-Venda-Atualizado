@@ -28,15 +28,8 @@ export const Button: React.FC<ButtonProps> = ({
         {children}
         <ArrowRight className="w-6 h-6 animate-pulse" />
       </span>
-      {/* Shine effect */}
+      {/* Shine effect - Animation defined in global CSS (index.html) */}
       <div className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[30deg] group-hover:animate-[shine_0.75s_ease-in-out_infinite]" />
-      <style>{`
-        @keyframes shine {
-          100% {
-            left: 125%;
-          }
-        }
-      `}</style>
     </>
   );
 

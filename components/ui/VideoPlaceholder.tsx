@@ -3,9 +3,13 @@ import { Play } from 'lucide-react';
 
 interface VideoPlaceholderProps {
   videoId?: string;
+  priority?: boolean;
 }
 
-export const VideoPlaceholder: React.FC<VideoPlaceholderProps> = ({ videoId = "HdDJFRbNbX4" }) => {
+export const VideoPlaceholder: React.FC<VideoPlaceholderProps> = ({ 
+  videoId = "HdDJFRbNbX4",
+  priority = false 
+}) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
   if (isPlaying) {
@@ -29,11 +33,16 @@ export const VideoPlaceholder: React.FC<VideoPlaceholderProps> = ({ videoId = "H
       className="relative w-full aspect-video bg-zinc-900 rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10 group cursor-pointer"
       onClick={() => setIsPlaying(true)}
     >
-      {/* Thumbnail Overlay - Using a high quality placeholder or youtube thumb */}
+      {/* Thumbnail Overlay - Optimized for LCP */}
       <img 
         src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
         alt="Video Thumbnail" 
         className="absolute inset-0 w-full h-full object-cover opacity-80 transition-opacity duration-500 group-hover:opacity-60"
+        loading={priority ? "eager" : "lazy"}
+        fetchPriority={priority ? "high" : "auto"}
+        decoding="async"
+        width="1280"
+        height="720"
         onError={(e) => {
           // Fallback if maxresdefault doesn't exist
           (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
@@ -47,7 +56,7 @@ export const VideoPlaceholder: React.FC<VideoPlaceholderProps> = ({ videoId = "H
       <div className="absolute inset-0 flex items-center justify-center">
         <div className="relative">
           <div className="absolute inset-0 bg-brand-accent/60 blur-[30px] rounded-full animate-pulse"></div>
-          <button className="relative bg-brand-accent text-white p-5 md:p-6 rounded-full transform transition-all duration-300 group-hover:scale-110 shadow-[0_0_30px_rgba(236,72,153,0.5)]">
+          <button className="relative bg-brand-accent text-white p-5 md:p-6 rounded-full transform transition-all duration-300 group-hover:scale-110 shadow-[0_0_30px_rgba(236,72,153,0.5)]" aria-label="Reproduzir vídeo">
             <Play className="w-8 h-8 md:w-10 md:h-10 fill-current ml-1" />
           </button>
         </div>

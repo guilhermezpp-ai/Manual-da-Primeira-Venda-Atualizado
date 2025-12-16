@@ -68,7 +68,7 @@ const SalesHero: React.FC = () => {
           <div className="absolute -inset-1 bg-gradient-to-b from-brand-accent/20 to-transparent rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition duration-700"></div>
           
           <div className="relative rounded-xl overflow-hidden ring-1 ring-white/10 bg-black shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-            <VideoPlaceholder videoId="HdDJFRbNbX4" />
+            <VideoPlaceholder videoId="HdDJFRbNbX4" priority={true} />
           </div>
         </div>
 
