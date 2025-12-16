@@ -17,7 +17,7 @@
     <link rel="dns-prefetch" href="https://i.postimg.cc">
 
     <!-- Preload Critical Assets (Inicia o download de recursos críticos imediatamente) -->
-    <!-- Fonte Principal -->
+    <!-- Fonte Principal (CSS) - Garante que a definição da fonte carregue rápido -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style">
     <!-- Imagem Hero LCP (Thumbnail do Vídeo) -->
     <link rel="preload" href="https://img.youtube.com/vi/HdDJFRbNbX4/maxresdefault.jpg" as="image">
@@ -37,7 +37,8 @@
       }
 
       body {
-        font-family: 'Inter', sans-serif;
+        /* Optimized Font Stack: Inter -> System UI -> Fallbacks */
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
         background-color: #0d0d0d; /* Brand Dark - Immediate Paint */
         color: #ffffff;
         line-height: 1.5;
@@ -64,7 +65,7 @@
       .text-white { color: #ffffff; }
     </style>
 
-    <!-- 3. Async Font Loading -->
+    <!-- 3. Async Font Loading with display=swap -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <noscript>
       <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -77,7 +78,8 @@
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
+              /* Optimized Tailwind Font Stack with System Fallbacks */
+              sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
             },
             colors: {
               brand: {
